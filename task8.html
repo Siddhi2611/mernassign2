@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse and Sort String Example</title>
+</head>
+<body>
+
+<h1>Reverse and Sort String Example</h1>
+
+<label for="inputString">Enter a string: </label>
+<input type="text" id="inputString" placeholder="Enter a string">
+<button id="reverseSortButton">Reverse and Sort</button>
+
+<p id="output"></p>
+
+<script>
+    // JavaScript code
+    const inputString = document.getElementById("inputString");
+    const reverseSortButton = document.getElementById("reverseSortButton");
+    const output = document.getElementById("output");
+
+    reverseSortButton.addEventListener("click", function () {
+        const inputValue = inputString.value;
+        const reversedValue = reverseAndSortString(inputValue);
+        output.textContent = `Reversed and sorted string: ${reversedValue}`;
+    });
+
+    function reverseAndSortString(str) {
+        // Use JavaScript's built-in functions to reverse a string and then sort the characters alphabetically
+        const reversedString = str.split('').reverse().join('');
+        const sortedString = reversedString.split('').sort().join('');
+        return sortedString;
+    }
+</script>
+
+</body>
+</html>

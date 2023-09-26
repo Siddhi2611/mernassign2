@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Show Time and Date</title>
+</head>
+<body>
+
+<h1>Show Time and Date</h1>
+
+<button id="showTimeButton">Show Time</button>
+<button id="showDateButton">Show Date</button>
+
+<p id="output"></p>
+
+<script>
+    // JavaScript code
+    const showTimeButton = document.getElementById("showTimeButton");
+    const showDateButton = document.getElementById("showDateButton");
+    const output = document.getElementById("output");
+
+    showTimeButton.addEventListener("click", function () {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        output.textContent = `Current time: ${timeString}`;
+    });
+
+    showDateButton.addEventListener("click", function () {
+        const now = new Date();
+        const dateString = now.toLocaleDateString();
+        output.textContent = `Current date: ${dateString}`;
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reverse Number Example</title>
+</head>
+<body>
+
+<h1>Reverse Number Example</h1>
+
+<label for="inputNumber">Enter a number: </label>
+<input type="number" id="inputNumber" placeholder="Enter a number">
+<button id="reverseButton">Reverse</button>
+
+<p id="output"></p>
+
+<script>
+    // JavaScript code
+    const inputNumber = document.getElementById("inputNumber");
+    const reverseButton = document.getElementById("reverseButton");
+    const output = document.getElementById("output");
+
+    reverseButton.addEventListener("click", function () {
+        const inputValue = inputNumber.value;
+        const reversedValue = reverseNumber(inputValue);
+        output.textContent = `Reversed number: ${reversedValue}`;
+    });
+
+    function reverseNumber(number) {
+        // Convert the number to a string
+        const numberString = number.toString();
+
+        // Reverse the string and convert it back to a number
+        const reversedString = numberString.split('').reverse().join('');
+        const reversedNumber = parseFloat(reversedString);
+
+        return reversedNumber;
+    }
+</script>
+
+</body>
+</html>
